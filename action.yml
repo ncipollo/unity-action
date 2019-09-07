@@ -7,7 +7,7 @@ inputs:
     default: ''
 runs:
   using: 'docker'
-  main: 'Dockerfile'
+  image: 'Dockerfile'
 branding:
   icon: 'tag'
   color: 'gray-dark'
