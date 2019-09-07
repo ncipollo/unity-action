@@ -1,0 +1,14 @@
+name: 'Unity Builds'
+description: 'Runs unity builds and tests'
+author: 'Nick Cipollo'
+inputs:
+  artifact:
+    description: 'An optional set of paths representing artifacts to upload to the release. This may be a single path or a comma delimited list of paths (or globs)'
+    default: ''
+runs:
+  using: 'node12'
+  main: 'lib/Main.js'
+branding:
+  icon: 'tag'
+  color: 'gray-dark'
+
