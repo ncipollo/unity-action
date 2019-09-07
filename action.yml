@@ -3,10 +3,13 @@ description: 'Runs unity builds and tests'
 author: 'Nick Cipollo'
 inputs:
   username:
-    description: 'Your unity user name. Use secrets'
+    description: 'Your unity user name. Use secrets!'
     default: ''
   password:
     description: 'Your unity password. Use secrets!'
+    default: ''
+  license:
+    description: 'Your unity license. Use secrets!'
     default: ''
 runs:
   using: 'docker'
