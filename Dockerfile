@@ -1,4 +1,6 @@
 FROM gableroux/unity3d:latest
 
+RUN cd /root/
 RUN ls
-CMD echo TEST
+COPY main.sh .
+CMD sh main.sh

@@ -2,8 +2,11 @@ name: 'Unity Builds'
 description: 'Runs unity builds and tests'
 author: 'Nick Cipollo'
 inputs:
-  artifact:
-    description: 'An optional set of paths representing artifacts to upload to the release. This may be a single path or a comma delimited list of paths (or globs)'
+  username:
+    description: 'Your unity user name. Use secrets'
+    default: ''
+  password:
+    description: 'Your unity password. Use secrets!'
     default: ''
 runs:
   using: 'docker'
