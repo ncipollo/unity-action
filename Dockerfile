@@ -1,9 +1,7 @@
 FROM gableroux/unity3d:latest
 
-WORKDIR /root/
+WORKDIR /root
 COPY main.sh .
-RUN ls /
-RUN ls
-RUN pwd
+COPY license.sh .
 
-CMD sh /root/main.sh
+CMD cd /root && sh main.sh
