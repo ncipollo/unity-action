@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 echo 'attempting to run unity!'
+echo $username
 
 xvfb-run --auto-servernum --server-args='-screen 0 640x480x24' \
 /opt/Unity/Editor/Unity \
