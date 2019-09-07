@@ -6,8 +6,8 @@ inputs:
     description: 'An optional set of paths representing artifacts to upload to the release. This may be a single path or a comma delimited list of paths (or globs)'
     default: ''
 runs:
-  using: 'node12'
-  main: 'lib/Main.js'
+  using: 'docker'
+  main: 'Dockerfile'
 branding:
   icon: 'tag'
   color: 'gray-dark'
