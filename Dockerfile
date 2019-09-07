@@ -1,6 +1,9 @@
 FROM gableroux/unity3d:latest
 
 WORKDIR /root/
-RUN ls
 COPY main.sh .
-CMD sh main.sh
+RUN ls /
+RUN ls
+RUN pwd
+
+CMD sh /root/main.sh
