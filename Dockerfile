@@ -2,7 +2,8 @@ FROM gableroux/unity3d:latest
 
 WORKDIR /root
 RUN ls /
-COPY /github /root/
+RUN ls /home
+RUN ls /root
 COPY main.sh .
 COPY license.sh .
 
