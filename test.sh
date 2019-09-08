@@ -9,6 +9,7 @@ TEST_PLATFORM=linux
 
 xvfb-run --auto-servernum --server-args='-screen 0 640x480x24' /opt/Unity/Editor/Unity \
 -projectPath $(pwd) \
+-manualLicenseFile /root/.local/share/unity3d/Unity/Unity_lic.ulf \
 -runTests \
 -testPlatform $TEST_PLATFORM \
 -testResults $(pwd)/$TEST_PLATFORM-results.xml \
