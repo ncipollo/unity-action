@@ -9,15 +9,15 @@ TEST_PLATFORM=linux
 
 xvfb-run --auto-servernum --server-args='-screen 0 640x480x24' /opt/Unity/Editor/Unity \
 -manualLicenseFile /root/.local/share/unity3d/Unity/Unity_lic.ulf \
--logFile - \
+-logFile /dev/stdout \
 -batchmode
 
 xvfb-run --auto-servernum --server-args='-screen 0 640x480x24' /opt/Unity/Editor/Unity \
 -manualLicenseFile /root/.local/share/unity3d/Unity/Unity_lic.ulf \
 -projectPath $(pwd) \
 -runEditorTests \
--testResults $(pwd)/$TEST_PLATFORM-results.xml \
--logFile - \
+-editorTestsResultFile $(pwd)/$TEST_PLATFORM-results.xml \
+-logFile /dev/stdout \
 -batchmode
 
 UNITY_EXIT_CODE=$?
@@ -32,5 +32,6 @@ else
   echo "Unexpected exit code $UNITY_EXIT_CODE";
 fi
 
+cat $(pwd)/$TEST_PLATFORM-results.xml
 cat $(pwd)/$TEST_PLATFORM-results.xml | grep test-run | grep Passed
 exit $UNITY_TEST_EXIT_CODE
