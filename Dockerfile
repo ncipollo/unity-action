@@ -1,7 +1,6 @@
 FROM gableroux/unity3d:latest
 
 WORKDIR /root
-COPY main.sh .
-COPY license.sh .
+COPY . .
 
 CMD cd /root && sh main.sh
