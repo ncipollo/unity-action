@@ -9,16 +9,16 @@ TEST_PLATFORM=linux
 
 xvfb-run --auto-servernum --server-args='-screen 0 640x480x24' /opt/Unity/Editor/Unity \
 -batchmode \
--quit
+-quit \
 -manualLicenseFile /root/.local/share/unity3d/Unity/Unity_lic.ulf \
--logFile /dev/stdout \
+-logFile /dev/stdout
 
 xvfb-run --auto-servernum --server-args='-screen 0 640x480x24' /opt/Unity/Editor/Unity \
--batchmode
+-batchmode \
 -projectPath $(pwd) \
 -runEditorTests \
 -editorTestsResultFile $(pwd)/$TEST_PLATFORM-results.xml \
--logFile /dev/stdout \
+-logFile /dev/stdout
 
 UNITY_EXIT_CODE=$?
 
