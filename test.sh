@@ -18,6 +18,7 @@ xvfb-run --auto-servernum --server-args='-screen 0 640x480x24' /opt/Unity/Editor
 -projectPath $(pwd) \
 -runEditorTests \
 -editorTestsResultFile $(pwd)/$TEST_PLATFORM-results.xml \
+-username "$INPUT_USERNAME" -password "$INPUT_PASSWORD" \
 -logFile /dev/stdout
 
 UNITY_EXIT_CODE=$?
