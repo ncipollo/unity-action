@@ -8,11 +8,11 @@ cd $GITHUB_WORKSPACE
 TEST_PLATFORM=linux
 TEST_RESULTS=$(pwd)/$TEST_PLATFORM-results.xml
 
-xvfb-run --auto-servernum --server-args='-screen 0 640x480x24' /opt/Unity/Editor/Unity \
--batchmode \
--quit \
--manualLicenseFile /root/.local/share/unity3d/Unity/Unity_lic.ulf \
--logFile /dev/stdout
+# xvfb-run --auto-servernum --server-args='-screen 0 640x480x24' /opt/Unity/Editor/Unity \
+# -batchmode \
+# -quit \
+# -manualLicenseFile /root/.local/share/unity3d/Unity/Unity_lic.ulf \
+# -logFile /dev/stdout
 
 xvfb-run --auto-servernum --server-args='-screen 0 640x480x24' /opt/Unity/Editor/Unity \
 -batchmode \
@@ -34,6 +34,5 @@ else
   echo "Unexpected exit code $UNITY_EXIT_CODE";
 fi
 
-cat $TEST_RESULTS
-cat $TEST_RESULTS | grep test-run | grep Passed
+cat $TEST_RESULTS | grep test-case 
 exit $UNITY_TEST_EXIT_CODE
