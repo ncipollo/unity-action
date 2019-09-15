@@ -8,18 +8,17 @@ cd $GITHUB_WORKSPACE
 TEST_PLATFORM=linux
 TEST_RESULTS=$(pwd)/$TEST_PLATFORM-results.xml
 
-# xvfb-run --auto-servernum --server-args='-screen 0 640x480x24' /opt/Unity/Editor/Unity \
-# -batchmode \
-# -quit \
-# -manualLicenseFile /root/.local/share/unity3d/Unity/Unity_lic.ulf \
-# -logFile /dev/stdout
+xvfb-run --auto-servernum --server-args='-screen 0 640x480x24' /opt/Unity/Editor/Unity \
+-batchmode \
+-quit \
+-manualLicenseFile /root/.local/share/unity3d/Unity/Unity_lic.ulf \
+-logFile /dev/stdout
 
 xvfb-run --auto-servernum --server-args='-screen 0 640x480x24' /opt/Unity/Editor/Unity \
 -batchmode \
 -projectPath $(pwd) \
 -runEditorTests \
 -testResults $TEST_RESULTS \
--username "$INPUT_USERNAME" -password "$INPUT_PASSWORD" \
 -logFile /dev/stdout
 
 UNITY_EXIT_CODE=$?
