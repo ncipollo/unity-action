@@ -6,6 +6,7 @@ echo 'Running tests!'
 
 cd $GITHUB_WORKSPACE
 TEST_PLATFORM=linux
+TEST_RESULTS=$(pwd)/$TEST_PLATFORM-results.xml
 
 xvfb-run --auto-servernum --server-args='-screen 0 640x480x24' /opt/Unity/Editor/Unity \
 -batchmode \
@@ -17,7 +18,7 @@ xvfb-run --auto-servernum --server-args='-screen 0 640x480x24' /opt/Unity/Editor
 -batchmode \
 -projectPath $(pwd) \
 -runEditorTests \
--editorTestsResultFile $(pwd)/$TEST_PLATFORM-results.xml \
+-editorTestsResultFile $TEST_RESULTS \
 -username "$INPUT_USERNAME" -password "$INPUT_PASSWORD" \
 -logFile /dev/stdout
 
@@ -33,6 +34,5 @@ else
   echo "Unexpected exit code $UNITY_EXIT_CODE";
 fi
 
-cat $(pwd)/$TEST_PLATFORM-results.xml
-cat $(pwd)/$TEST_PLATFORM-results.xml | grep test-run | grep Passed
+cat $TEST_RESULTS | grep test-run | grep Passed
 exit $UNITY_TEST_EXIT_CODE
