@@ -10,3 +10,8 @@ echo "$INPUT_LICENSE" | tr -d '\r' > /root/.local/share/unity3d/Unity/Unity_lic.
 
 set -x
 
+xvfb-run --auto-servernum --server-args='-screen 0 640x480x24' /opt/Unity/Editor/Unity \
+-batchmode \
+-quit \
+-manualLicenseFile /root/.local/share/unity3d/Unity/Unity_lic.ulf \
+-logFile /dev/stdout
