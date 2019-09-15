@@ -3,14 +3,17 @@ description: 'Runs unity builds and tests'
 author: 'Nick Cipollo'
 inputs:
   username:
-    description: 'Your unity user name. Use secrets!'
+    description: 'Your unity user name. Required to generate license. Use secrets!'
     default: ''
   password:
-    description: 'Your unity password. Use secrets!'
+    description: 'Your unity password. Required to generate license. Use secrets!'
     default: ''
   license:
     description: 'Your unity license. Use secrets!'
     default: ''
+  mode:
+    description: 'The mode to run the action in. Use build or test.'
+    default: 'test'
 runs:
   using: 'docker'
   image: 'Dockerfile'
