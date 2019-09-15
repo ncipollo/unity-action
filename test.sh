@@ -34,5 +34,6 @@ else
   echo "Unexpected exit code $UNITY_EXIT_CODE";
 fi
 
+cat $TEST_RESULTS
 cat $TEST_RESULTS | grep test-run | grep Passed
 exit $UNITY_TEST_EXIT_CODE
