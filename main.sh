@@ -5,7 +5,7 @@ if [ -z "$INPUT_LICENSE" ]; then
 else
       ./setup.sh
       if [ "$INPUT_MODE" == "build" ]; then
-            echo "would run build here"
+            ./build.sh
       else 
             ./test.sh
       fi

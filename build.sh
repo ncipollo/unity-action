@@ -2,17 +2,15 @@
 
 set -x
 
-echo 'Creating build!'
+echo "Creating build! Target: $INPUT_BUILD_TARGET"
 
 cd $GITHUB_WORKSPACE
-TEST_PLATFORM=linux
-TEST_RESULTS=$(pwd)/$TEST_PLATFORM-results.xml
 
 xvfb-run --auto-servernum --server-args='-screen 0 640x480x24' /opt/Unity/Editor/Unity \
 -batchmode \
 -projectPath $(pwd) \
--runEditorTests \
--testResults $TEST_RESULTS \
+-buildTarget $INPUT_BUILD_TARGET \
+-executeMethod $INPUT_BUILD_METHOD \
 -logFile /dev/stdout
 
 UNITY_EXIT_CODE=$?
@@ -27,5 +25,4 @@ else
   echo "Unexpected exit code $UNITY_EXIT_CODE";
 fi
 
-cat $TEST_RESULTS | grep test-case 
 exit $UNITY_TEST_EXIT_CODE
