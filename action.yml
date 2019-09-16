@@ -2,18 +2,24 @@ name: 'Unity Builds'
 description: 'Runs unity builds and tests'
 author: 'Nick Cipollo'
 inputs:
-  username:
-    description: 'Your unity user name. Required to generate license. Use secrets!'
+  build_method:
+    description: 'The static method to execute during the build.'
     default: ''
-  password:
-    description: 'Your unity password. Required to generate license. Use secrets!'
-    default: ''
+  build_target:
+    description: 'The build target. Possible options are: standalone, Win, Win64, OSXUniversal, Linux, Linux64, LinuxUniversal, iOS, Android, Web, WebStreamed, WebGL, XboxOne, PS4, WindowsStoreApps, Switch, N3DS, tvOS.'
+    default: 'Linux'
   license:
     description: 'Your unity license. Use secrets!'
     default: ''
   mode:
     description: 'The mode to run the action in. Use build or test.'
     default: 'test'
+  password:
+    description: 'Your unity password. Required to generate license. Use secrets!'
+    default: ''
+  username:
+    description: 'Your unity user name. Required to generate license. Use secrets!'
+    default: ''
 runs:
   using: 'docker'
   image: 'Dockerfile'
