@@ -2,14 +2,13 @@
 
 set -x
 
-echo "Creating build! Target: $INPUT_BUILD_TARGET"
+echo "Creating build! Calling build method: $INPUT_BUILD_METHOD"
 
 cd $GITHUB_WORKSPACE
 
 xvfb-run --auto-servernum --server-args='-screen 0 640x480x24' /opt/Unity/Editor/Unity \
 -batchmode \
 -projectPath $(pwd) \
--buildTarget $INPUT_BUILD_TARGET \
 -executeMethod $INPUT_BUILD_METHOD \
 -logFile /dev/stdout
 
