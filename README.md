@@ -72,3 +72,7 @@ jobs:
         name: build.tar.gz
         path: Build/os_x
 ```
+
+## Attribution
+
+This action heavily relies on https://gitlab.com/gableroux/unity3d. They have a Patreon account listed so if you find this useful consider becoming a patron there.
