@@ -14,6 +14,9 @@ inputs:
   password:
     description: 'Your unity password. Required to generate license. Use secrets!'
     default: ''
+  serial:
+    description: 'Your unity pro serial number. Required to generate pro license. Not required for unity personal. Use secrets!'
+    default: ''
   username:
     description: 'Your unity user name. Required to generate license. Use secrets!'
     default: ''
