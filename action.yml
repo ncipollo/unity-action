@@ -20,6 +20,9 @@ inputs:
   username:
     description: 'Your unity user name. Required to generate license. Use secrets!'
     default: ''
+  projectPath:
+    description: 'Your unity project path relative to the repository root.'
+    default: ''
 runs:
   using: 'docker'
   image: 'Dockerfile'
