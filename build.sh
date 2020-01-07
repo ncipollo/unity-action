@@ -9,7 +9,7 @@ cd $GITHUB_WORKSPACE
 xvfb-run --auto-servernum --server-args='-screen 0 640x480x24' /opt/Unity/Editor/Unity \
 -batchmode \
 -quit \
--projectPath $(pwd) \
+-projectPath=$(pwd)$INPUT_PROJECT_PATH \
 -executeMethod $INPUT_BUILD_METHOD \
 -logFile /dev/stdout
 
