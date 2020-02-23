@@ -1,4 +1,4 @@
-FROM gableroux/unity3d:2019.2.2f1
+FROM gableroux/unity3d:2019.3.1f1
 
 WORKDIR /root
 COPY . .
