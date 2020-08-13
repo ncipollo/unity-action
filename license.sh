@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-echo 'Dumping license'
-
 xvfb-run --auto-servernum --server-args='-screen 0 640x480x24' \
 /opt/Unity/Editor/Unity \
 -logFile /dev/stdout \
@@ -11,9 +9,6 @@ xvfb-run --auto-servernum --server-args='-screen 0 640x480x24' \
 -password "$INPUT_PASSWORD" \
 ${INPUT_SERIAL:+'-serial '"$INPUT_SERIAL"} \
 || true
-
-ls
-
 
 echo '\n\n================================================================================'
 echo 'No license provided! Assuming one needs to be generated...'
