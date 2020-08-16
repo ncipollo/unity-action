@@ -2,14 +2,13 @@
 
 set -x
 
-echo 'Running tests!'
-
 cd $GITHUB_WORKSPACE
 TEST_PLATFORM=linux
 TEST_RESULTS=$(pwd)/$TEST_PLATFORM-results.xml
 
 xvfb-run --auto-servernum --server-args='-screen 0 640x480x24' /opt/Unity/Editor/Unity \
 -batchmode \
+-nographics \
 -projectPath $(pwd) \
 -runEditorTests \
 -testResults $TEST_RESULTS \

@@ -4,6 +4,7 @@ xvfb-run --auto-servernum --server-args='-screen 0 640x480x24' \
 /opt/Unity/Editor/Unity \
 -logFile /dev/stdout \
 -batchmode \
+-nographics \
 -createManualActivationFile \
 -username "$INPUT_USERNAME" \
 -password "$INPUT_PASSWORD" \
