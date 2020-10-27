@@ -8,7 +8,7 @@ This action may be used to generate a Unity build or run tests within a Unity pr
 - **mode**: The mode to run the action in. Can be set to `build` or `test`.
 - **password**: Your unity password. Required to generate license. Use secrets!
 - **serial**: Your unity pro serial number. Required to generate pro license. Not required for unity personal. Use secrets!
-- **username**: Your unity user name. Required to generate license. Use secrets!'
+- **username**: Your unity user name. Required to generate license. Use secrets!
 
 ## License
 
